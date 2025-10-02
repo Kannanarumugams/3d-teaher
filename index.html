@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Pose Modeler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "immer": "https://aistudiocdn.com/immer@^10.1.3",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+  }
+}
+</script>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  @keyframes blink {
+    0%, 95%, 100% {
+      transform: scaleY(0);
+    }
+    97.5% {
+      transform: scaleY(1);
+    }
+  }
+  .blinking-eyelid {
+    animation: blink 4s infinite ease-in-out;
+    transform-origin: top;
+  }
+  @keyframes scroll-text {
+    from {
+      transform: translateY(var(--scroll-start));
+    }
+    to {
+      transform: translateY(var(--scroll-end));
+    }
+  }
+  .scrolling-board-text {
+    animation-name: scroll-text;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+</style>
+</head>
+  <body class="bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
